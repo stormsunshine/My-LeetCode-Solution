@@ -1,2 +1,0 @@
-Use a Map to record each number and the corresponding index of the number.
-For an element in the array, if target minus element is already in the Map and the index of target minus element is smaller than the current index, then return the two indices as the answer.
