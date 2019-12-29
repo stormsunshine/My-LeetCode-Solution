@@ -4,7 +4,6 @@ class Solution {
         if (n == 1)
             array[0] = 0;
         else {
-            int max = n / 2;
             if (n % 2 == 0) {
                 for (int i = 1; i < n; i += 2) {
                     array[i - 1] = -i;
