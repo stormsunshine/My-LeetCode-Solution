@@ -36,9 +36,9 @@ class MyCalendar {
                 size++;
                 return true;
             }
-            if (start >= booking1[0] && start < booking1[1] || end > booking1[0] && end <= booking1[1])
+            if (booking1[0] < end && booking1[1] > start)
                 return false;
-            if (start >= booking2[0] && start < booking2[1] || end > booking2[0] && end <= booking2[1])
+            if (booking2[0] < end && booking2[1] > start)
                 return false;
         }
         return false;
