@@ -20,6 +20,31 @@ class Solution {
                     return false;
             }
         }
-        return edgesCount == n - 1;
+        if (edgesCount != n - 1)
+            return false;
+        int root = -1;
+        for (int i = 0; i < n; i++) {
+            if (parents[i] == -1) {
+                if (root < 0)
+                    root = i;
+                else
+                    return false;
+            }
+        }
+        if (root < 0)
+            return false;
+        int visitCount = 0;
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            visitCount++;
+            int left = leftChild[node], right = rightChild[node];
+            if (left >= 0)
+                queue.offer(left);
+            if (right >= 0)
+                queue.offer(right);
+        }
+        return visitCount == n;
     }
 }
