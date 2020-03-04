@@ -70,10 +70,6 @@ class Interval implements Comparable<Interval> {
         } else
             return false;
     }
-
-    public String toString() {
-        return "[" + start + ", " + end + "]";
-    }
 }
 
 /**
