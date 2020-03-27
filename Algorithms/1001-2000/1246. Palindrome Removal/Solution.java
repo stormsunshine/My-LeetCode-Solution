@@ -14,12 +14,8 @@ class Solution {
             for (int j = i + 2; j < length; j++) {
                 if (arr[i] == arr[j])
                     dp[i][j] = dp[i + 1][j - 1];
-                else {
-                    int min = Integer.MAX_VALUE;
-                    for (int k = i; k < j; k++)
-                        min = Math.min(min, dp[i][k] + dp[k + 1][j]);
-                    dp[i][j] = min;
-                }
+                for (int k = i; k < j; k++)
+                    dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k + 1][j]);
             }
         }
         return dp[0][length - 1];
