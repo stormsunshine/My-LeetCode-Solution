@@ -10,7 +10,7 @@ class Solution {
             dp[i][0] = Math.max(dp[i - 1][0], 0) + nums[i];
             dp[i][1] = Math.max(dp[i - 1][0], 0) + nums[i] * nums[i];
             dp[i][2] = Math.max(Math.max(dp[i - 1][1], dp[i - 1][2]), 0) + nums[i];
-            int curMax = Math.max(Math.max(dp[i][0], dp[i][1]), dp[i][2]);
+            int curMax = Math.max(dp[i][1], dp[i][2]);
             max = Math.max(max, curMax);
         }
         return max;
