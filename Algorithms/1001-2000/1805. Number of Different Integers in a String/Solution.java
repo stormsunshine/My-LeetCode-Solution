@@ -27,7 +27,7 @@ class Solution {
         if (length == 1)
             return str;
         int start = 0;
-        while (start < length) {
+        while (start < length - 1) {
             if (str.charAt(start) != '0')
                 break;
             start++;
