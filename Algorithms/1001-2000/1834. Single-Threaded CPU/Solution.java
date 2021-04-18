@@ -32,6 +32,7 @@ class Solution {
             long[] task = newTasks[index];
             if (task[0] <= curTime || priorityQueue.isEmpty()) {
                 priorityQueue.offer(task);
+                curTime = Math.max(curTime, task[0]);
                 index++;
             } else {
                 long[] nextTask = priorityQueue.poll();
